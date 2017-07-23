@@ -45,3 +45,30 @@ None.
 ## Available tags
 
 - **`install-prometheus`** -  Default tag to perform grafana installation
+
+## Usage
+
+In order to set up a prometheus server across your plateform, start by checking out the role from Ansible galaxy:
+```bash
+ansible-galaxy install sbouii.prometheus_ansible
+```
+
+Finally call the role within you Ansible playbook:
+```yaml
+---
+- hosts: localhost
+  sudo: yes
+  roles:
+    - prometheus_ansible
+```
+
+
+Finally call the role within you Ansible playbook:
+```yaml
+---
+- hosts: localhost
+  sudo: yes
+  roles:
+    - prometheus_ansible
+```
+
