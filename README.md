@@ -72,3 +72,32 @@ Finally call the role within you Ansible playbook:
     - prometheus_ansible
 ```
 
+
+## Development and Testing
+### Test with Vagrant
+For quick tests, you can spin up a Debian VM using Vagrant. You maybe need to adapt the Vagrantfile to suit your environment (IP addresses, etc).
+
+    $ vagrant up
+
+### Run acceptance tests
+
+For runing Acceptance/Integration tests against your role , we use the tool `test-kitchen`.All written acceptance tests are in the **./test/integration/** directory.
+
+The `.kitchen.yml` file describes the testing configuration and the list of suite tests to run. By default, the instances will be converged with Ansible and ran in Vagrant virtual machines.
+
+To list the instances:
+
+    $ kitchen list
+
+    Instance                    Driver   Provisioner      Verifier  Transport  Last Action
+    default-debian-8-x64        Vagrant  AnsiblePlaybook  Busser    Ssh        <Not Created>
+    ...
+
+To run the default test suite, for instance, on a Ubuntu Trusty platform, run the following command:
+
+    $ kitchen test default-ubuntu-1404-x64
+
+## Author information
+
+This role was created by [Mariem Sbouii](https://www.linkedin.com/in/mariem-sboui-76906711b) ,a DevOps enthusiast
+
