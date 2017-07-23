@@ -41,3 +41,7 @@ None.
 - **`redhat_prometheus_repositoy_description`** - a description for the kubernetes redhat repository
 - **`prometheus_port`** - grafana server port
 
+
+## Available tags
+
+- **`install-prometheus`** -  Default tag to perform grafana installation
