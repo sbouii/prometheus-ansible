@@ -1,9 +1,9 @@
 # Prometheus_ansible_role
 ## Description
 
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-sbouii.prometheus_ansible-blue.svg)](https://galaxy.ansible.com/sbouii/prometheus_ansible/) 
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-sbouii.prometheus-blue.svg)](https://galaxy.ansible.com/sbouii/prometheus/) 
 
-[![Build Status](https://travis-ci.org/sbouii/prometheus_ansible.svg?branch=master)](https://travis-ci.org/sbouii/prometheus_ansible)
+[![Build Status](https://travis-ci.org/sbouii/prometheus-ansible.svg?branch=master)](https://travis-ci.org/sbouii/prometheus-ansible)
 
 **[Prometheus](https://prometheus.io/)** is an open-source systems monitoring and alerting toolkit.
 This is an ansible role for installing Prometheus on Debian and RedHat distributions. It doesn't handle the configuration aspect of Prometheus. As always I prefer to separe the installation and the configuration/monitoring aspect of a software for organizing purposes.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected.
@@ -50,7 +50,7 @@ None.
 
 In order to set up a prometheus server across your plateform, start by checking out the role from Ansible galaxy:
 ```bash
-ansible-galaxy install sbouii.prometheus_ansible
+ansible-galaxy install sbouii.prometheus
 ```
 
 Finally call the role within you Ansible playbook:
@@ -59,17 +59,7 @@ Finally call the role within you Ansible playbook:
 - hosts: localhost
   sudo: yes
   roles:
-    - prometheus_ansible
-```
-
-
-Finally call the role within you Ansible playbook:
-```yaml
----
-- hosts: localhost
-  sudo: yes
-  roles:
-    - prometheus_ansible
+    - sbouii.prometheus
 ```
 
 
