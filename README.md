@@ -1,4 +1,4 @@
-# Prometheus_ansible_role
+# Prometheus-ansible
 ## Description
 
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-sbouii.prometheus-blue.svg)](https://galaxy.ansible.com/sbouii/prometheus/) 
