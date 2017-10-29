@@ -33,15 +33,6 @@ More infos in the role's metadata file.
 
 None.
 
-
-## Role variables
-
-- **`debian_prometheus_repositoy_filename`** - the filename of the prometheus debian repository 
-- **`redhat_prometheus_repositoy_name`** - a unique prometheus redhat repository ID
-- **`redhat_prometheus_repositoy_description`** - a description for the prometheus redhat repository
-- **`prometheus_port`** - prometheus server port
-
-
 ## Available tags
 
 - **`install-prometheus`** -  Default tag to perform prometheus installation
