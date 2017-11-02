@@ -6,7 +6,7 @@
 [![Build Status](https://travis-ci.org/sbouii/prometheus-ansible.svg?branch=master)](https://travis-ci.org/sbouii/prometheus-ansible)
 
 **[Prometheus](https://prometheus.io/)** is an open-source systems monitoring and alerting toolkit.
-This is an ansible role for installing Prometheus on Debian and RedHat distributions. It doesn't handle the configuration aspect of Prometheus. As always I prefer to separe the installation and the configuration/monitoring aspect of a software for organizing purposes.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected.
+This is an ansible role for installing Prometheus on Debian and RedHat distributions. It doesn't handle the configuration aspect of Prometheus. As always I prefer to seperate the installation and the configuration/monitoring aspect of a software for organizing purposes.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected.
 
 ## Requirements
 
@@ -32,15 +32,6 @@ More infos in the role's metadata file.
 ### Dependencies
 
 None.
-
-
-## Role variables
-
-- **`debian_prometheus_repositoy_filename`** - the filename of the prometheus debian repository 
-- **`redhat_prometheus_repositoy_name`** - a unique prometheus redhat repository ID
-- **`redhat_prometheus_repositoy_description`** - a description for the prometheus redhat repository
-- **`prometheus_port`** - prometheus server port
-
 
 ## Available tags
 
