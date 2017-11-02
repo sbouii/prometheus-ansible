@@ -5,3 +5,9 @@
 
 - name: reload systemd
   shell: systemctl daemon-reload
+
+- name: enable node exporter service
+  shell: systemctl enable node_exporter.service
+
+- name: start node exporter service 
+  shell: systemctl start node_exporter.service
