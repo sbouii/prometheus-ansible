@@ -53,7 +53,7 @@ Finally call the role within you Ansible playbook:
     - sbouii.prometheus
 ```
 ## Troubleshooting
-you need to upgrade those libraries in order to make the module unarchive work with 2.2** or higher 
+you need to upgrade those libraries in order to make the module unarchive work with ansible 2.2** or higher 
 
 ```yaml
 ansible localhost -m pip -a "name=requests>=2.12" 
