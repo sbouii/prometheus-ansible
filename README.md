@@ -18,7 +18,7 @@ This is an ansible role for installing Prometheus on Debian and RedHat distribut
 
 - **[Vagrant](https://www.vagrantup.com/) 1.9** or higher 
 
-- **Virtualbox**
+- **Virtualbox 5.1** or higher
 
 ## Supported Systems
 
