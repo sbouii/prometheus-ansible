@@ -13,6 +13,7 @@
   copy:
     src: ../files/node_exporter.service
     dest: /etc/systemd/system/node_exporter.service
+    mode: 0644
   notify:
     - reload systemd
     - enable node exporter service
@@ -22,5 +23,6 @@
   copy:
     src: ../files/prometheus.yml
     dest: /etc/prometheus/prometheus.yml
+    mode: 0644
   notify:
     - run prometheus
