@@ -52,7 +52,16 @@ Finally call the role within you Ansible playbook:
   roles:
     - sbouii.prometheus
 ```
+## Troubleshooting
+you need to upgrade those libraries in order to make the module unarchive work with 2.2** or higher 
 
+```yaml
+ansible localhost -m pip -a "name=requests>=2.12" 
+ansible localhost -m pip -a "name=urllib3>=1.19" 
+ansible localhost -m pip -a "name=ndg-httpsclient>=0.4.2" 
+
+```
+Check out this one https://github.com/ansible/ansible/issues/18894 for more details 
 
 ## Development and Testing
 ### Test with Vagrant
