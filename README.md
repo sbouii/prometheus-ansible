@@ -14,11 +14,11 @@ This is an ansible role for installing Prometheus on Debian and RedHat distribut
 
 - **Python 2.7** or higher
 
-- **Ansible 2.2** or higher 
+- **Ansible 2.3.1.0 
 
 - **[Vagrant](https://www.vagrantup.com/) 1.9** or higher 
 
-- **Virtualbox**
+- **Virtualbox 5.1** or higher
 
 ## Supported Systems
 
@@ -52,7 +52,16 @@ Finally call the role within you Ansible playbook:
   roles:
     - sbouii.prometheus
 ```
+## Troubleshooting
+you need to upgrade those libraries in order to make the module unarchive work with ansible 2.2** or higher 
 
+```yaml
+ansible localhost -m pip -a "name=requests>=2.12" 
+ansible localhost -m pip -a "name=urllib3>=1.19" 
+ansible localhost -m pip -a "name=ndg-httpsclient>=0.4.2" 
+
+```
+Check out this one https://github.com/ansible/ansible/issues/18894 for more details 
 
 ## Development and Testing
 ### Test with Vagrant
