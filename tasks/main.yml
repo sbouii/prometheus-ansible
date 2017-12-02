@@ -1,3 +1,15 @@
+
+- name: create node-exporter directory
+  file: 
+   path: /Node 
+   state: directory
+
+- name: create prometheus directory
+  file: 
+   path: /Prometheus 
+   state: directory
+
+
 - name: install prometheus
   unarchive: 
    src: https://github.com/prometheus/prometheus/releases/download/v1.1.3/prometheus-1.1.3.linux-amd64.tar.gz
@@ -7,22 +19,37 @@
 - name: install node-exporter
   unarchive:
    src: https://github.com/prometheus/node_exporter/releases/download/0.11.0/node_exporter-0.11.0.linux-amd64.tar.gz
-   dest: /Prometheus
-   
-- name: run node exporter as a service
+   dest: /Node
+   copy: no  
+
+#- name: create user prometheus
+#  shell: useradd --no-create-home --shell /bin/false node_exporter 
+
+#- name: create user node_exporter
+#  shell: useradd --no-create-home --shell /bin/false node_exporter
+
+- name: run node exporter as an init service
   copy:
-    src: ../files/node_exporter.service
-    dest: /etc/systemd/system/node_exporter.service
-    mode: 0644
-  notify:
-    - reload systemd
-    - enable node exporter service
-    - start node exporter service  
+   src: ./files/node_exporter.service
+   dest: /etc/systemd/system/node_exporter.service
+
+- name: enable node exporter
+  systemd:
+    name: node_exporter.service
+    state: started
+    daemon_reload: yes
+    enabled: yes
 
 - name: update prometheus configuration
   copy:
-    src: ../files/prometheus.yml
-    dest: /etc/prometheus/prometheus.yml
-    mode: 0644
-  notify:
-    - run prometheus
+   src: ./files/prometheus.yml
+   dest: /Prometheus/prometheus.yml
+
+- name: run prometheus service as an init service
+  copy:
+   src: ./files/prometheus.service
+   dest:  /etc/systemd/system/prometheus.service
+
+- name: enable prometheus service on boot
+  shell: systemctl enable prometheus.service
+

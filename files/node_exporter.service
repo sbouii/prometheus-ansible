@@ -2,8 +2,10 @@
 Description=Node Exporter
 
 [Service]
-User=prometheus
-ExecStart=/Prometheus/node_exporter
+User=node_exporter
+Group=node_exporter
+ExecStart=/Node/node_exporter
 
 [Install]
 WantedBy=default.target
+                            

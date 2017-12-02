@@ -1,0 +1,13 @@
+[Unit]
+Description=Prometheus
+
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/Prometheus -config.file /Prometheus/prometheus.yml \
+    -storage.local.path /var/lib/prometheus/
+
+[Install]
+WantedBy=default.target
+
