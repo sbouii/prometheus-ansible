@@ -14,7 +14,7 @@ This is an ansible role for installing Prometheus on Debian and RedHat distribut
 
 - **Python 2.7** or higher
 
-- **Ansible 2.3.1.0 
+- **Ansible**2.3.1.0 
 
 - **[Vagrant](https://www.vagrantup.com/) 1.9** or higher 
 
