@@ -6,6 +6,7 @@ User=prometheus
 Group=prometheus
 Type=simple
 ExecStart=/Prometheus -config.file /Prometheus/prometheus.yml \
+    -alertmanager.url=http://localhost:9093 \
     -storage.local.path /var/lib/prometheus/
 
 [Install]
