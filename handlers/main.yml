@@ -1,8 +1,3 @@
-- name: run prometheus
-  shell: ./prometheus -storage.local.memory-chunks=10000
-  args:
-   chdir: /Prometheus
-
 - name: enable node exporter
   systemd:
     name: node_exporter.service

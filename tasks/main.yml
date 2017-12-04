@@ -46,3 +46,8 @@
    dest:  /etc/systemd/system/prometheus.service
   notify:
    - enable prometheus service on boot
+
+- name: run prometheus
+  shell: ./prometheus -storage.local.memory-chunks=10000
+  args:
+   chdir: /Prometheus 
