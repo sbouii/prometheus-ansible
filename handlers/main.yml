@@ -3,11 +3,17 @@
   args:
    chdir: /Prometheus
 
-- name: reload systemd
-  shell: systemctl daemon-reload
+- name: enable node exporter
+  systemd:
+    name: node_exporter.service
+    state: started
+    daemon_reload: yes
+    enabled: yes
 
-- name: enable node exporter service
-  shell: systemctl enable node_exporter.service
+- name: enable prometheus service on boot
+  systemd:
+    name: prometheus.service
+    state: started
+    daemon_reload: yes
+    enabled: yes
 
-- name: start node exporter service 
-  shell: systemctl start node_exporter.service

@@ -22,34 +22,27 @@
    dest: /Node
    copy: no  
 
-#- name: create user prometheus
-#  shell: useradd --no-create-home --shell /bin/false node_exporter 
+- name: create user prometheus
+  shell: useradd --no-create-home --shell /bin/false node_exporter 
 
-#- name: create user node_exporter
-#  shell: useradd --no-create-home --shell /bin/false node_exporter
+- name: create user node_exporter
+  shell: useradd --no-create-home --shell /bin/false node_exporter
 
-- name: run node exporter as an init service
+- name: add node exporter init service
   copy:
    src: ./files/node_exporter.service
    dest: /etc/systemd/system/node_exporter.service
-
-- name: enable node exporter
-  systemd:
-    name: node_exporter.service
-    state: started
-    daemon_reload: yes
-    enabled: yes
+  notify:
+   - enable node exporter
 
 - name: update prometheus configuration
   copy:
    src: ./files/prometheus.yml
    dest: /Prometheus/prometheus.yml
 
-- name: run prometheus service as an init service
+- name: add prometheus init service
   copy:
    src: ./files/prometheus.service
    dest:  /etc/systemd/system/prometheus.service
-
-- name: enable prometheus service on boot
-  shell: systemctl enable prometheus.service
-
+  notify:
+   - enable prometheus service on boot
