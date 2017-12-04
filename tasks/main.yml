@@ -29,19 +29,19 @@
 
 - name: add node exporter init service
   copy:
-   src: ./files/node_exporter.service
+   src: node_exporter.service
    dest: /etc/systemd/system/node_exporter.service
   notify:
    - enable node exporter on boot
 
 - name: config prometheus
   copy:
-   src: ./files/prometheus.yml
+   src: prometheus.yml
    dest: /Prometheus/prometheus.yml
 
 - name: add prometheus init service
   copy:
-   src: ./files/prometheus.service
+   src: prometheus.service
    dest:  /etc/systemd/system/prometheus.service
   notify:
    - enable prometheus service on boot
@@ -60,11 +60,20 @@
 - name: Install alertmanager
   shell: GO15VENDOREXPERIMENT=1 go get github.com/prometheus/alertmanager
  
-- name: Config alertmanager
-  shell: alertmanager -config.file=../files/alertmanager_config.yml
- 
-- name: Run alertmanager
-  shell: alertmanager -config.file=../files/simple_alert.yml
+- name: config alertmanager 
+  copy:
+   src: {{ item }}
+   dest: /Prometheus/ {{ item }}
+  with_items:
+   - alert.rules
+   - alertmanager_config.yml 
+
+- name: add alertmanager init service
+  copy:
+   src: alertmanager.service
+   dest: /etc/systemd/system/alertmanager.service 
+  notify:
+   - enable alertmanager service on boot
 
 - name: run prometheus
   shell: /Prometheus -config.file=prometheus.yml -alertmanager.url=http://localhost:9093 -storage.local.memory-chunks=10000 

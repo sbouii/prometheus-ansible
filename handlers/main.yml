@@ -12,3 +12,9 @@
     daemon_reload: yes
     enabled: yes
 
+- name: enable alertmanager service on boot
+  systemd:
+    name: alertmanager.service
+    state: started
+    daemon_reload: yes
+    enabled: yes

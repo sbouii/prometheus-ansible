@@ -1,0 +1,12 @@
+[Unit]
+Description=Prometheus Alert Manager service
+
+[Service]
+Type=simple
+User=prometheus
+ExecStart=$GOPATH/src/github.com/prometheus/alertmanager -config.file /Prometheus/alertmanager_config.yml
+Restart=always
+
+[Install]
+WantedBy=default.target
+
