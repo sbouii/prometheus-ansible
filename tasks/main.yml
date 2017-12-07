@@ -1,13 +1,13 @@
 
-#- name: create node-exporter directory
-#  file: 
-#   path: /Node 
-#   state: directory
+- name: create node-exporter directory
+  file: 
+   path: /Node 
+   state: directory
 
-#- name: create prometheus directory
-#  file: 
-#   path: /Prometheus 
-#   state: directory
+- name: create prometheus directory
+  file: 
+   path: /Prometheus 
+   state: directory
 
 
 - name: install prometheus
@@ -22,11 +22,11 @@
    dest: /Node
    copy: no  
 
-- name: create user prometheus
-  shell: useradd --no-create-home --shell /bin/false node_exporter 
+#- name: create user prometheus
+#  shell: useradd --no-create-home --shell /bin/false node_exporter 
 
-- name: create user node_exporter
-  shell: useradd --no-create-home --shell /bin/false node_exporter
+#- name: create user node_exporter
+#  shell: useradd --no-create-home --shell /bin/false node_exporter
 
 - name: add node exporter init service
   copy:
