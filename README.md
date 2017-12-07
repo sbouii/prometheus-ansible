@@ -4,7 +4,7 @@
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-sbouii.prometheus-blue.svg)](https://galaxy.ansible.com/sbouii/prometheus/) 
 
 **[Prometheus](https://prometheus.io/)** is an open-source systems monitoring and alerting toolkit.
-This is an ansible role for installing Prometheus on Debian and RedHat distributions. It doesn't handle the configuration aspect of Prometheus. As always I prefer to seperate the installation and the configuration/monitoring aspect of a software for organizing purposes.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected.
+This is an ansible role for installing Prometheus on Debian and RedHat distributions.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ This is an ansible role for installing Prometheus on Debian and RedHat distribut
 
 ## Supported Systems
 
-- Debian
+this role is tested on 
 - Ubuntu
 - Centos
 
