@@ -1,13 +1,13 @@
 
-- name: create node-exporter directory
-  file: 
-   path: /Node 
-   state: directory
+#- name: create node-exporter directory
+#  file: 
+#   path: /Node 
+#   state: directory
 
-- name: create prometheus directory
-  file: 
-   path: /Prometheus 
-   state: directory
+#- name: create prometheus directory
+#  file: 
+#   path: /Prometheus 
+#   state: directory
 
 
 - name: install prometheus
