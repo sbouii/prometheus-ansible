@@ -1,0 +1,24 @@
+galaxy_info:
+  author: Mariem Sbouii
+  description: It's an ansible role for installing prometheus on RedHat/CentOS GNU/Linux servers
+  license: MIT
+  min_ansible_version: 2.3
+  
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    # - name: Fedora
+    #   versions:
+    #     - all
+    # - name: opensuse
+    #   versions:
+    #     - all
+    # - name: SLES
+    #   versions:
+    #     - all
+
+  galaxy_tags:
+    - monitoring
+    - system  
+  dependencies: []
