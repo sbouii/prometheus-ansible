@@ -62,11 +62,8 @@
  
 - name: config alertmanager 
   copy:
-   src: {{ item }}
-   dest: /Prometheus/ {{ item }}
-  with_items:
-   - alert.rules
-   - alertmanager_config.yml 
+   src: alertmanager_config.yml
+   dest: /Prometheus/alertmanager_config.yml
 
 - name: add alertmanager init service
   copy:
