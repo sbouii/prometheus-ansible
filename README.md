@@ -4,7 +4,7 @@
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-sbouii.prometheus-blue.svg)](https://galaxy.ansible.com/sbouii/prometheus/) 
 
 **[Prometheus](https://prometheus.io/)** is an open-source systems monitoring and alerting toolkit.
-This is an ansible role for installing Prometheus on Debian and RedHat distributions.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected.
+This is an ansible role for installing Prometheus on RedHat distributions.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected or not.
 
 ## Requirements
 
@@ -21,8 +21,7 @@ This is an ansible role for installing Prometheus on Debian and RedHat distribut
 ## Supported Systems
 
 this role is tested on 
-- Ubuntu
-- Centos
+- Centos 7
 
 More infos in the role's metadata file.
 
@@ -63,7 +62,7 @@ Check out this one https://github.com/ansible/ansible/issues/18894 for more deta
 
 ## Development and Testing
 ### Test with Vagrant
-For quick tests, you can spin up a Debian VM using Vagrant. You maybe need to adapt the Vagrantfile to suit your environment (IP addresses, etc).
+For quick tests, you can spin up a Centos VM using Vagrant. You maybe need to adapt the Vagrantfile to suit your environment (IP addresses, etc).
 
     $ vagrant up
 
