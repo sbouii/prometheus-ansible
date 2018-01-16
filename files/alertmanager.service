@@ -4,7 +4,7 @@ Description=Prometheus Alert Manager service
 [Service]
 Type=simple
 User=prometheus
-ExecStart=$GOPATH/src/github.com/prometheus/alertmanager -config.file /Prometheus/alertmanager_config.yml
+ExecStart=/Alertmanager/alertmanager-0.13.0.linux-amd64/alertmanager -config.file /Prometheus/alertmanager_config.yml
 Restart=always
 
 [Install]
