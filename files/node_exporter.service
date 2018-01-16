@@ -5,6 +5,7 @@ Description=Node Exporter
 User=node_exporter
 Group=node_exporter
 ExecStart=/Node/node_exporter
+Restart=always
 
 [Install]
 WantedBy=default.target
