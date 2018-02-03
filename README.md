@@ -77,12 +77,12 @@ To list the instances:
     $ kitchen list
 
     Instance                    Driver   Provisioner      Verifier  Transport  Last Action
-    default-debian-8-x64        Vagrant  AnsiblePlaybook  Busser    Ssh        <Not Created>
+    centos-7-0-x64              Vagrant  AnsiblePlaybook  Busser    Ssh        <Not Created>
     ...
 
-To run the default test suite, for instance, on a Ubuntu Trusty platform, run the following command:
-
-    $ kitchen test default-ubuntu-1404-x64
+To run the default test suite, for instance, on a  Centos platform, run the following command:
+   
+    $ kitchen test centos-7-0-x64
 
 ## Author information
 
