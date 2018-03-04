@@ -1,30 +1,32 @@
 
-- name: create node-exporter directory
-  file: 
-   path: /Node 
-   state: directory
+#- name: create node-exporter directory
+#  file: 
+#   path: /Node 
+#   state: directory
 
-- name: create prometheus directory
-  file: 
-   path: /Prometheus 
-   state: directory
+#- name: create prometheus directory
+#  file: 
+#   path: /Prometheus 
+#   state: directory
 
-- name: create prometheus storage directory 
-  file:
-   path: /var/lib/prometheus
-   state: directory 
+#- name: create prometheus storage directory 
+#  file:
+#   path: /var/lib/prometheus
+#   state: directory 
 
 - name: install prometheus
   unarchive: 
    src: https://github.com/prometheus/prometheus/releases/download/v1.1.3/prometheus-1.1.3.linux-amd64.tar.gz
    dest: /Prometheus
    copy: no
+   validate_certs: False
 
 - name: install node-exporter
   unarchive:
    src: https://github.com/prometheus/node_exporter/releases/download/0.11.0/node_exporter-0.11.0.linux-amd64.tar.gz
    dest: /Node
    copy: no  
+   validate_certs: False
 
 - name: create user prometheus
   shell: useradd --no-create-home --shell /bin/false node_exporter 
@@ -61,6 +63,8 @@
    src: https://github.com/prometheus/alertmanager/releases/download/v0.13.0/alertmanager-0.13.0.linux-amd64.tar.gz
    dest: /Alertmanager
    copy: no
+   validate_certs: False
+
 
 - name: config alertmanager 
   copy:
