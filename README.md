@@ -86,5 +86,5 @@ To run the default test suite, for instance, on a  Centos platform, run the foll
 
 ## Author information
 
-This role was created by [Mariem Sbouii](https://www.linkedin.com/in/mariem-sboui-76906711b) ,a SRE enthusiast
+This role was created by [Mariem Sbouii](https://www.linkedin.com/in/mariem-sboui-76906711b) .
 
